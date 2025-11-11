@@ -5,6 +5,7 @@ import FilterScreen from '../screens/FilterScreen';
 import HomeScreen from '../screens/HomeScreen';
 import AddScreen from '../screens/AddScreen';
 import { Ionicons } from '@expo/vector-icons';
+import { MenuProvider } from '../context/MenuContext';
 
 export type RootTabParamList = {
     Home: undefined;
@@ -50,10 +51,12 @@ const screenOptions: (props: { route: any }) => BottomTabNavigationOptions = ({ 
 export default function AppNavigator() {
     
     return (
+        <MenuProvider>
         <Tab.Navigator screenOptions={screenOptions} id={undefined}>
             <Tab.Screen name='Filter' component={FilterScreen} />
             <Tab.Screen name='Home' component={HomeScreen} />
             <Tab.Screen name='Add' component={AddScreen} />
         </Tab.Navigator>
+        </MenuProvider>
     );
 }
