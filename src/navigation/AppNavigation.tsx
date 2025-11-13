@@ -49,9 +49,9 @@ const screenOptions: (props: { route: any }) => BottomTabNavigationOptions = ({ 
     
 });
 
+//this is the main component and is wrapped in MenuProvider to ensure all data is transfered between screens
+
 export default function AppNavigator() {
-    
-//this function ensure that the user can navigate throughout the app and is wrapped in a MenuProvider tag to work in conjunction with the MenuContext function
 
     return (
         <MenuProvider>
