@@ -19,6 +19,14 @@ Added the add menu section onto the home screen.
 Added the counter .
 Added some basic text to the 2 other screens.
 
+Final submission
+Moved the add item functionality to a seperate screen.
+Created a menu context folder to ensue data from the add screen gets displayed on the main menu screen.
+Added functionality to the filter screen, now the user can choose which courses thed like to see on the menu.
+Added an average price calculator that will be dislayed on the menu screen.
+Centered all the content on each screen.
+Added more comments.
+
 Reference list
 ReactNative, 2025. Style. [online] Available at: https://reactnative.dev/docs/style [Accesed 15 October 2025].
 
