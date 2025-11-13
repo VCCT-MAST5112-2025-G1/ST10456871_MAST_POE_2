@@ -1,4 +1,4 @@
-# ST10456871_MAST_POE_2
+# ST10456871_MAST_POE
 
 How to run the app:
 Step 1: Download the zip file.
@@ -31,10 +31,3 @@ Reference list:
 ReactNative, 2025. Style. [online] Available at: https://reactnative.dev/docs/style [Accesed 15 October 2025].
 
 Youtube link - https://www.youtube.com/watch?v=1mVpJvsObNw 
-
-Cosden Solutions, 2023. Learn React Hooks: useContext - Simply Explained!. [video online] Available at: https://www.youtube.com/watch?v=HYKDUF8X3qI [Accesssed 20 October 2025]
-
-Byte Grad, 2023. Use Typescript with React Context API. [video online] Avaiable at: https://www.youtube.com/watch?v=Zkktw_2tJGs [Accessed 20 October 2025]
-
-Nova Designs, 2024. Master React Hooks in easy way / useContext. [video online] Available at: https://www.youtube.com/watch?v=n7xQVRpYHYY [Acccessed 21 October 2025]
-
