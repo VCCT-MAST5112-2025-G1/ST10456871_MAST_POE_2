@@ -38,11 +38,16 @@ export default function FilterScreen() {
 
 const styles = StyleSheet.create({
   container: {
-     flex: 1, 
-     backgroundColor: '#3d1f00', 
-     alignItems: 'center', 
-     padding: 20 
-    },
+    flex: 1,
+    backgroundColor: '#3d1f00',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  centeredContent: {
+    width: '100%',
+    alignItems: 'center',
+  },
   title: {
      color: 'white', 
      fontSize: 36, 
