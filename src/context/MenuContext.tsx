@@ -22,6 +22,8 @@ interface MenuContextType {
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
 
+//this function is responisble for ensuring data transfer form the ascreen to screen. what is done on one screen will reflect pn the other.
+
 export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [starters, setStarters] = useState<MenuItem[]>([]);
   const [mains, setMains] = useState<MenuItem[]>([]);

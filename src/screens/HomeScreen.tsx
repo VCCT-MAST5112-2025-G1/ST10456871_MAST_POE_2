@@ -6,6 +6,8 @@ import { useMenu } from '../context/MenuContext';
 export default function HomeScreen() {
   const { starters, mains, desserts, deleteItem, visibleCategories } = useMenu();
 
+  //this allows the average of each course section to be calculated
+
   const calculateAverage = (items: any[]) => {
     if (items.length === 0) return 0;
     const total = items.reduce((sum, item) => sum + parseFloat(item.price || 0), 0);
@@ -17,6 +19,8 @@ export default function HomeScreen() {
   const avgDesserts = calculateAverage(desserts);
   const totalItems = starters.length + mains.length + desserts.length;
 
+  //displays the information that is typed out on the add screen
+
   const renderItems = (items: any[], category: string) =>
     items.map((item, index) => (
       <View key={index} style={styles.menuItem}>
@@ -24,6 +28,9 @@ export default function HomeScreen() {
           <Text style={styles.menuText}>{item.name} - R{item.price}</Text>
           <Text style={styles.menuDesc}>{item.description}</Text>
         </View>
+
+        {/*delete button only appears once an item is added */}
+
         <TouchableOpacity onPress={() => deleteItem(category as any, index)}>
           <Text style={styles.deleteButton}>Delete</Text>
         </TouchableOpacity>
@@ -39,6 +46,8 @@ export default function HomeScreen() {
           style={{ maxHeight: 400, width: '100%' }}
           contentContainerStyle={{ alignItems: 'center' }}
         >
+
+          {/*items are only displayed if they are selected on the filter screen */}
           {visibleCategories.includes('Starters') && (
             <>
               <Text style={styles.sectionTitle}>Starters</Text>
@@ -61,9 +70,13 @@ export default function HomeScreen() {
           )}
         </ScrollView>
 
+        {/*counter displayes total number of items currnelty on the menu */}
+
         <View style={styles.counterContainer}>
           <Text style={styles.counterText}>Total Items: {totalItems}</Text>
         </View>
+
+        {/*average price of each course section is displayed */}
 
         <View style={styles.averageContainer}>
           <Text style={styles.averageTitle}>Average Prices</Text>
@@ -86,6 +99,8 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+/*(React native. 2025)*/
 
 const styles = StyleSheet.create({
   container: {

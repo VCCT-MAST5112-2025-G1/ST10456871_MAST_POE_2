@@ -12,6 +12,8 @@ export default function FilterScreen() {
       <Text style={styles.title}>Filter Menu</Text>
       <Text style={styles.subtitle}>Select categories to display:</Text>
 
+      {/*these buttons work like checkboxes and once clicked will update the information on the menu screen */}
+
       <View style={styles.buttonGroup}>
         {categories.map((cat) => {
           const isActive = visibleCategories.includes(cat);
@@ -27,6 +29,8 @@ export default function FilterScreen() {
         })}
       </View>
 
+      {/*resets everything on the menu screen */}
+
       <TouchableOpacity style={styles.resetButton} onPress={resetFilters}>
         <Text style={styles.resetButtonText}>Reset Filters</Text>
       </TouchableOpacity>
@@ -35,6 +39,8 @@ export default function FilterScreen() {
     </View>
   );
 }
+
+/*(React native. 2025)*/
 
 const styles = StyleSheet.create({
   container: {

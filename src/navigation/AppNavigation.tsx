@@ -13,6 +13,7 @@ export type RootTabParamList = {
     Filter: undefined;
 };
 
+//this function is responsible for creating te bottom tabs that the usr will navigate throughout the app
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const screenOptions: (props: { route: any }) => BottomTabNavigationOptions = ({ route }) => ({
@@ -50,6 +51,8 @@ const screenOptions: (props: { route: any }) => BottomTabNavigationOptions = ({ 
 
 export default function AppNavigator() {
     
+//this function ensure that the user can navigate throughout the app and is wrapped in a MenuProvider tag to work in conjunction with the MenuContext function
+
     return (
         <MenuProvider>
         <Tab.Navigator screenOptions={screenOptions} id={undefined}>

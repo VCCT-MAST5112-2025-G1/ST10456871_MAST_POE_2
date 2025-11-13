@@ -21,9 +21,13 @@ export default function AddItemScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Add Menu Item</Text>
 
+      {/*textinputs for the user to customise the menu */}
+
       <TextInput style={styles.input} placeholder="Dish Name" placeholderTextColor="#ccc" value={name} onChangeText={setName} />
       <TextInput style={styles.input} placeholder="Price" placeholderTextColor="#ccc" keyboardType="numeric" value={price} onChangeText={setPrice} />
       <TextInput style={styles.input} placeholder="Description" placeholderTextColor="#ccc" value={description} onChangeText={setDescription} />
+
+      {/*user will click one of these buttons which determine under which section the information on the menu will be updated */}
 
       <View style={styles.categorySelector}>
         {['Starters', 'Mains', 'Desserts'].map((cat) => (
@@ -37,6 +41,8 @@ export default function AddItemScreen() {
         ))}
       </View>
 
+      {/*this button updates the information on the menu screen and clears the data on the add screen */}
+
       <TouchableOpacity style={styles.addButton} onPress={handleAddItem}>
         <Text style={styles.addButtonText}>Add Item</Text>
       </TouchableOpacity>
@@ -45,6 +51,8 @@ export default function AddItemScreen() {
     </View>
   );
 }
+
+/*(React native. 2025)*/
 
 const styles = StyleSheet.create({
   container: {
