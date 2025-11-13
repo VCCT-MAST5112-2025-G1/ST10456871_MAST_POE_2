@@ -1,4 +1,4 @@
-# ST10456871_MAST_POE_2
+# ST10456871_MAST_POE
 
 How to run the app:
 Step 1: Download the zip file.
