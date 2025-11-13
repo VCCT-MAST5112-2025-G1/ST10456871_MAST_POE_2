@@ -1,35 +1,95 @@
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useMenu, Category } from '../context/MenuContext';
 
-export default function App() {
+export default function FilterScreen() {
+  const { visibleCategories, toggleCategory, resetFilters } = useMenu();
+  const categories: Category[] = ['Starters', 'Mains', 'Desserts'];
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Filter</Text>
-      <Text style={styles.body}>Coming Soon...</Text>
+      <Text style={styles.title}>Filter Menu</Text>
+      <Text style={styles.subtitle}>Select categories to display:</Text>
+
+      <View style={styles.buttonGroup}>
+        {categories.map((cat) => {
+          const isActive = visibleCategories.includes(cat);
+          return (
+            <TouchableOpacity
+              key={cat}
+              style={[styles.button, isActive && styles.activeButton]}
+              onPress={() => toggleCategory(cat)}
+            >
+              <Text style={styles.buttonText}>{cat}</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
+      <TouchableOpacity style={styles.resetButton} onPress={resetFilters}>
+        <Text style={styles.resetButtonText}>Reset Filters</Text>
+      </TouchableOpacity>
+
       <StatusBar style="light" />
     </View>
   );
 }
 
-/*(React native. 2025)*/
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#3d1f00', 
-    flex: 1, 
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 20,
-  },
+     flex: 1, 
+     backgroundColor: '#3d1f00', 
+     alignItems: 'center', 
+     padding: 20 
+    },
   title: {
-    color: 'white',
-    fontSize: 36,
-    fontWeight: 'bold',
-    marginTop: 50,
-  },
-  body: {
-    color: 'white',
-    fontSize: 26,
-    marginTop: 100,
-  },
+     color: 'white', 
+     fontSize: 36, 
+     fontWeight: 'bold', 
+     marginTop: 50, 
+     marginBottom: 10
+    },
+  subtitle: {
+     color: '#fff', 
+     fontSize: 18, 
+     marginBottom: 20 
+    },
+  buttonGroup: {
+     flexDirection: 'row', 
+     justifyContent: 'space-around', 
+     width: '100%' 
+    },
+  button: {
+     paddingVertical: 12, 
+     paddingHorizontal: 20, 
+     backgroundColor: '#7a4a00', 
+     borderRadius: 10 
+    },
+  activeButton: {
+     backgroundColor: '#a27c00' 
+    },
+  buttonText: {
+     color: 'white', 
+     fontWeight: 'bold', 
+     fontSize: 16 
+    },
+  selectedText: {
+     color: '#fff', 
+     fontSize: 18, 
+     fontWeight: 'bold', 
+     marginTop: 8 
+    },
+  resetButton: {
+     marginTop: 30, 
+     backgroundColor: '#a27c00', 
+     paddingVertical: 12, 
+     paddingHorizontal: 30, 
+     borderRadius: 10 
+    },
+  resetButtonText: {
+     color: 'white', 
+     fontSize: 18, 
+     fontWeight: 'bold' 
+    },
 });

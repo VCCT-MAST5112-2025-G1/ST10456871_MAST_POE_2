@@ -13,8 +13,11 @@ interface MenuContextType {
   starters: MenuItem[];
   mains: MenuItem[];
   desserts: MenuItem[];
+  visibleCategories: Category[];
   addItem: (item: MenuItem) => void;
   deleteItem: (category: Category, index: number) => void;
+  toggleCategory: (category: Category) => void;
+  resetFilters: () => void;
 }
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
@@ -23,6 +26,7 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [starters, setStarters] = useState<MenuItem[]>([]);
   const [mains, setMains] = useState<MenuItem[]>([]);
   const [desserts, setDesserts] = useState<MenuItem[]>([]);
+  const [visibleCategories, setVisibleCategories] = useState<Category[]>(['Starters', 'Mains', 'Desserts']);
 
   const addItem = (item: MenuItem) => {
     if (item.category === 'Starters') setStarters((prev) => [...prev, item]);
@@ -36,8 +40,20 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (category === 'Desserts') setDesserts((prev) => prev.filter((_, i) => i !== index));
   };
 
+  const toggleCategory = (category: Category) => {
+    setVisibleCategories((prev) =>
+      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]
+    );
+  };
+
+  const resetFilters = () => {
+    setVisibleCategories(['Starters', 'Mains', 'Desserts']);
+  };
+
   return (
-    <MenuContext.Provider value={{ starters, mains, desserts, addItem, deleteItem }}>
+    <MenuContext.Provider
+      value={{ starters, mains, desserts, visibleCategories, addItem, deleteItem, toggleCategory, resetFilters }}
+    >
       {children}
     </MenuContext.Provider>
   );
