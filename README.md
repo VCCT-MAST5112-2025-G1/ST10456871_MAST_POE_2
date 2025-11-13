@@ -31,3 +31,9 @@ Reference list:
 ReactNative, 2025. Style. [online] Available at: https://reactnative.dev/docs/style [Accesed 15 October 2025].
 
 Youtube link - https://www.youtube.com/watch?v=1mVpJvsObNw 
+
+Cosden Solutions, 2023. Learn React Hooks: useContext - Simply Explained. [video online] available at: https://www.youtube.com/watch?v=HYKDUF8X3qI [Accessed 24 October 2025]
+
+Byte Grad, 2023. Use Typescript with React Context API. [video online] available at: https://www.youtube.com/watch?v=Zkktw_2tJGs&t=73s [Accessed 24 October 2025]
+
+Nova Designs, 2024. Master React Hooks in easy way / useContext. [video online] available at: https://www.youtube.com/watch?v=n7xQVRpYHYY [Accessed 25 October 2025]
